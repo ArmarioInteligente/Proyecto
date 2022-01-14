@@ -1,0 +1,110 @@
+WindowManager:
+    MainWindow:
+    PopUpScreen:
+
+
+<MainWindow>:
+    name: "main"
+    FloatLayout:
+        CircularProgressBar:
+            id: cp
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            size_hint:(None,None)
+            height:400
+            width:400
+            max:100
+
+        Button:
+            pos_hint: {'center_x': 0.5, "top":0.5}
+            size_hint: 0.2, 0.1
+            background_color: (48/255,84/255,150/255,1)
+            background_normal: ''
+            text: "Open Door"
+            on_release:
+                root.btn1()
+
+        Button:
+            pos_hint: {'center_x': 0.5, "top":0.35}
+            size_hint: 0.2, 0.1
+            background_color: (48/255,84/255,150/255,1)
+            background_normal: ''
+            text: "Close Door"
+            on_release:
+                root.btn2()
+
+        Button:
+            pos_hint: {'center_x': 0.5, "top":0.2}
+            size_hint: 0.2, 0.1
+            background_color: (48/255,84/255,150/255,1)
+            background_normal: ''
+            text: "Connect"
+            on_release:
+                root.btnconnect()
+   
+
+<ConnectWindow>:
+    name: "connect"
+
+    FloatLayout:
+        #CONECTAR CON EL ARMARIO
+
+        Button:
+            pos_hint: {"x":0.5, "y":0}
+            size_hint: 0.1, 0.1
+            text: "Go Back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+
+<PopUpScreen>:
+    name: "popupscreen"
+    
+    FloatLayout:
+        Label:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: 0.1, 0.1
+            text: "Wait..."
+    
+
+<P1>:
+    #FloatLayout:
+    Label:
+        text: "Door has been opened"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
+
+<P2>:
+    #FloatLayout:
+    Label:
+        text: "Door has been closed"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
+
+<P3>:
+    #FloatLayout:
+    Label:
+        text: "Open Configurations and\nconnect to the same WiFi\nconnection that the closet is\nconnected to"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
+        
+<P4>:
+    #FloatLayout:
+    Label:
+        text: "Write in: ssh pi@192.168.0.2\npython3 Documents/-\nBomba.py"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
+
+<P5>:
+    #FloatLayout:
+    Label:
+        text: "Write in: ssh pi@192.168.0.2\npython3 Documents/-\nBombados.py"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
+        
+<P6>:
+    #FloatLayout:
+    Label:
+        text: "¡Close the door!"
+        pos_hint: {"x":0.5, "y":0.5}
+        size_hint: 0.1, 0.1
