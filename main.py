@@ -21,14 +21,6 @@ from threading import Timer
 #from kivymd.button import MDRaisedButton, MDIconButton, MDFlatButton, MDRectangleFlatIconButton, MDRoundFlatIconButton
 import os
 import subprocess
-import jnius
-from jnius import cast
-from jnius import autoclass
-import time
-import paramiko
-import cryptography
-import bcrypt
-
 #-----------------------------------------------------------------------
 varstate = 0
 varstateone = 0
